@@ -1,2 +1,2 @@
-select distinct Num as ConsecutiveNums 
-from Logs,(select Id as id2, Num as num2 from Logs,(select Id as id1, Num as num1 from Logs) as table1 where Id = id1 + 1 and Num = num1) as table2 where Id = id2 + 1 and Num = num2
+SELECT DISTINCT num as ConsecutiveNums
+FROM Logs, (SELECT Id as id2, Num as num2 FROM Logs, (SELECT Id as id1, Num as num1 FROM Logs) as table1 WHERE Id = id1 + 1 and Num = num1) as table2 where Id = id2 + 1 and Num = num2
